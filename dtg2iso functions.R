@@ -49,12 +49,6 @@ dtg2iso <- function(x, UTC = F){
 }
 
 
-iso2dtg("2099-01-06T18:30R")
-
-to
-
-061830RJAN12
-
 iso2dtg <- function(x,UTC = F){
     paste(
     substr(x, 9,10),
@@ -101,47 +95,3 @@ iso2dtg <- function(x,UTC = F){
     substr(x, 3, 4),
         sep = "")
 }
-
-
-061830RJAN12
-
-
-
-dtg2iso8601("061830RAUG99", UTC = F)
-
-v = substr("061830RAUG98", 11, 12)
-v = as.data.frame(as.numeric(v))
-
-dates <- as.data.frame(c("1973-09-10T00:00A",
-           "1977-11-23T01:00B",
-           "1978-09-14T02:00C",
-           "1980-04-24T03:00D",
-           "1982-07-22T04:00E",
-           "1985-12-11T05:00F",
-           "1986-07-07T06:00G",
-           "1986-08-14T07:00H",
-           "1988-08-18T08:00I",
-           "1988-08-25T09:00K",
-           "1989-05-09T23:00L",
-           "1990-01-11T23:00M",
-           "1992-08-05T23:00N",
-           "1994-02-23T01:00O",
-           "1997-07-31T02:00P",
-           "1998-08-31T00:00Q",
-           "2001-02-16T00:00R",
-           "2001-04-04T00:00S",
-           "2001-09-13T00:00T",
-           "2001-10-19T00:00U",
-           "2008-07-08T00:00V",
-           "2009-07-31T00:00W",
-           "2010-10-07T00:00X",
-           "2014-06-18T00:00Y",
-           "2019-11-04T00:00Z"
-))
-colnames(dates) <- "dates"
-
-iso2dtg(dates$dates)
-
-dates$dates2 <- sapply(dates$dates, iso2dtg) 
-dates$dates3 <- sapply(dates$dates2, dtg2iso) 
-dates$datescheck <- dates$dates == dates$dates3
